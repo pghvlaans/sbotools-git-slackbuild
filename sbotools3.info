@@ -1,5 +1,5 @@
 PRGNAM="sbotools3"
-VERSION="20241101-c96a729"
+VERSION="20241101_c96a729"
 HOMEPAGE="https://pghvlaans.github.io/sbotools3/"
 DOWNLOAD="https://github.com/pghvlaans/sbotools3/archive/c96a729ed39dfbeebbdddd59c344b603765aa377.zip"
 MD5SUM="5cbe4bcf4d91b6daff8c74ab129d9acf"
