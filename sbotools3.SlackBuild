@@ -9,8 +9,8 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=sbotools3
-VERSION=${VERSION:-20241104_daa4c8e}
-SRCVER=${SRCVER:-daa4c8e95854413ca3f71d7fa946ec4dc0dba9a4}
+VERSION=${VERSION:-20241104_5bdce64}
+SRCVER=${SRCVER:-5bdce642d09375deee79859f7e5b9852bd4b97ef}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_pghv}
 PKGTYPE=${PKGTYPE:-tgz}
