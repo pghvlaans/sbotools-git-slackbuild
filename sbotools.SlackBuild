@@ -9,8 +9,8 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=sbotools
-VERSION=${VERSION:-20241129_e6af483}
-SRCVER=${SRCVER:-e6af483c6f99ae4eeb9b4e90c559e697b4411066}
+VERSION=${VERSION:-20241130_9ebb828}
+SRCVER=${SRCVER:-9ebb82870b4774ecdd98203bd6a9626fb5ed09a2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_pghv}
 PKGTYPE=${PKGTYPE:-tgz}
@@ -74,7 +74,8 @@ for i in $MANS; do
 done
 
 mkdir -p $PKG/etc/sbotools
-cp sbotools.conf $PKG/etc/sbotools/sbotools.conf.new
+cp etc/sbotools.conf $PKG/etc/sbotools/sbotools.conf.new
+cp etc/sbotools.hints $PKG/etc/sbotools/sbotools.hints.new
 
 find $PKG/usr/man -type f -exec gzip -9 {} \;
 for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz; rm $i ; done
