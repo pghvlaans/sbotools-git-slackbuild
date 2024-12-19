@@ -26,8 +26,8 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=sbotools
-VERSION=${VERSION:-20241219_809569e}
-SRCVER=${SRCVER:-809569e477d4e85fba210d884d1a7ed4642b59d0}
+VERSION=${VERSION:-20241219_0d2ab81}
+SRCVER=${SRCVER:-0d2ab81f23438cd71a79366c7359bc1598b73bf0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_pghv}
 PKGTYPE=${PKGTYPE:-tgz}
@@ -74,7 +74,7 @@ find -L . \
 )
 
 SCRIPTS="check clean config find install remove snap upgrade"
-MANS="man1 man5"
+MANS="man1 man3 man5"
 
 mkdir -p $PKG/usr/sbin \
          $PKG/usr/share/zsh/site-functions \
