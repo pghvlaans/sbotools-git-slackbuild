@@ -26,8 +26,8 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=sbotools
-VERSION=${VERSION:-20241227_e233275}
-SRCVER=${SRCVER:-e23327524fa73f04eb8479f3861de0668274ec5c}
+VERSION=${VERSION:-20241228_0ecec44}
+SRCVER=${SRCVER:-0ecec448e159ae2e77de5393280c754cc34bafc0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_pghv}
 PKGTYPE=${PKGTYPE:-tgz}
@@ -84,6 +84,10 @@ for i in $SCRIPTS; do
   install -m 0644 completions/zsh/_sbo$i $PKG/usr/share/zsh/site-functions
   install -m 0644 completions/bash/sbo$i $PKG/usr/share/bash-completion/completions/sbo$i
 done
+
+# sbosnap compatibility completions
+install -m 0644 completions/zsh/_sbosnap $PKG/usr/share/zsh/site-functions
+install -m 0644 completions/bash/sbosnap $PKG/usr/share/bash-completion/completions/sbosnap
 
 for i in $MANS; do
   mkdir -p $PKG/usr/man/$i
