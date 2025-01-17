@@ -26,8 +26,8 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=sbotools
-VERSION=${VERSION:-20250117_02f47c0}
-SRCVER=${SRCVER:-02f47c00acd6af2c6d5267514915c19864936b02}
+VERSION=${VERSION:-20250117_a2aec85}
+SRCVER=${SRCVER:-a2aec85dd1925091a2456854a6c1f7aa0b0ae825}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_pghv}
 PKGTYPE=${PKGTYPE:-tgz}
@@ -63,6 +63,7 @@ find -L . \
 
 # Make sure --version shows useful information
 ./tools/update_versions.sh $VERSION
+chmod 644 SBO-Lib/README
 
 ( cd SBO-Lib
 	/usr/bin/perl Makefile.PL \
