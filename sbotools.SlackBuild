@@ -26,8 +26,8 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=sbotools
-VERSION=${VERSION:-20250129_ca620ba}
-SRCVER=${SRCVER:-ca620ba0740376b443a7eeb8400111a69e1ce0ec}
+VERSION=${VERSION:-20250130_32c2cca}
+SRCVER=${SRCVER:-32c2ccaad947c879aa72469396dbab7961942503}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_pghv}
 PKGTYPE=${PKGTYPE:-tgz}
@@ -78,6 +78,7 @@ chmod 644 SBO-Lib/README
 )
 
 SCRIPTS="check clean config find hints install remove upgrade"
+ANYONE="config find hints"
 MANS="man1 man3 man5"
 
 mkdir -p $PKG/usr/sbin \
@@ -88,6 +89,14 @@ for i in $SCRIPTS; do
   install -m 0644 completions/zsh/_sbo$i $PKG/usr/share/zsh/site-functions
   install -m 0644 completions/bash/sbo$i $PKG/usr/share/bash-completion/completions/sbo$i
 done
+# sbofind and some of sboconfig and sbohints can be used without root
+mkdir -p $PKG/usr/bin
+(
+cd $PKG/usr/bin
+for i in $ANYONE; do
+  ln -s ../sbin/sbo$i $PKG/usr/bin
+done
+)
 
 # sbosnap compatibility completions
 install -m 0644 completions/zsh/_sbosnap $PKG/usr/share/zsh/site-functions
