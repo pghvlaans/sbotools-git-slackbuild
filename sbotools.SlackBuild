@@ -26,8 +26,8 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=sbotools
-VERSION=${VERSION:-20250323_20a4c31}
-SRCVER=${SRCVER:-20a4c3100641b8aeb28c94f03c2e56be1979b099}
+VERSION=${VERSION:-20250325_8ee1274}
+SRCVER=${SRCVER:-8ee1274d293cb4425243935e9f0529a8e92ed7c7}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_pghv}
 PKGTYPE=${PKGTYPE:-tgz}
@@ -78,7 +78,7 @@ chmod 644 SBO-Lib/README
 )
 
 SCRIPTS="check clean config find hints install remove upgrade"
-ANYONE="check config find hints"
+ANYONE="check config find hints install upgrade"
 MANS="man1 man3 man5"
 
 mkdir -p $PKG/usr/sbin \
