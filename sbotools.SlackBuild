@@ -26,8 +26,8 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=sbotools
-VERSION=${VERSION:-20250517_e6beeb0}
-SRCVER=${SRCVER:-e6beeb067e825b575f9eb91a11df0151fd0c6755}
+VERSION=${VERSION:-20250517_474e817}
+SRCVER=${SRCVER:-474e817411dd39c080a076f73e2692cfdff6a97e}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_pghv}
 PKGTYPE=${PKGTYPE:-tgz}
@@ -128,7 +128,7 @@ find $PKG -name perllocal.pod -o -name ".packlist" -o -name "*.bs" | xargs rm -f
 find $PKG -depth -type d -empty -delete || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION/SBO-Lib
-cp -a SBO-Lib/README SBO-Lib/Changes $PKG/usr/doc/$PRGNAM-$VERSION/SBO-Lib
+cp -a SBO-Lib/README SBO-Lib/ChangeLog.md $PKG/usr/doc/$PRGNAM-$VERSION/SBO-Lib
 cp -a LICENSE THANKS $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
