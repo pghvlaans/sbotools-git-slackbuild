@@ -26,8 +26,8 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=sbotools
-VERSION=${VERSION:-20250608_4df6952}
-SRCVER=${SRCVER:-4df6952f32a3e46d0bb4ea3937b6608afcc2a5f1}
+VERSION=${VERSION:-20250609_24d60b0}
+SRCVER=${SRCVER:-24d60b0ff2cd0204b75bf157b4047570c0559bf8}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_pghv}
 PKGTYPE=${PKGTYPE:-tgz}
@@ -68,7 +68,7 @@ chmod 644 SBO-Lib/README
 ( cd SBO-Lib
 	/usr/bin/perl Makefile.PL \
 	  PREFIX=/usr \
-	  INSTALLDIRS=site \
+	  INSTALLDIRS=vendor \
 	  INSTALLVENDORMAN1DIR=/usr/man/man1 \
 	  INSTALLVENDORMAN3DIR=/usr/man/man3 \
 	  INSTALLMAN3DIR=none
