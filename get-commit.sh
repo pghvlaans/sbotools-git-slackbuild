@@ -6,5 +6,5 @@
 
 cd $(dirname $0) || exit
 
-COMMIT=6eeed489e2a7a5b30f21c25a30e6bbba885d68a3
+COMMIT=9f320da3a273b92be7ed03709b2175205d17dda5
 wget https://github.com/pghvlaans/sbotools/archive/$COMMIT.zip
