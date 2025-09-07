@@ -26,8 +26,8 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=sbotools
-VERSION=${VERSION:-20250830_564046b}
-SRCVER=${SRCVER:-564046bd999821a772f7175e2a607bf7bc202679}
+VERSION=${VERSION:-20250907_a92b184}
+SRCVER=${SRCVER:-a92b184a950c0625d8f7521cf97c69c3535cfdfc}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_pghv}
 PKGTYPE=${PKGTYPE:-tgz}
@@ -77,8 +77,8 @@ chmod 644 SBO-Lib/README
 	make install DESTDIR=$PKG
 )
 
-SCRIPTS="check clean config find hints install remove upgrade"
-ANYONE="check config find hints install upgrade"
+SCRIPTS="check clean config find hints install remove upgrade tool"
+ANYONE="check config find hints install upgrade tool"
 MANS="man1 man3 man5"
 
 mkdir -p $PKG/usr/sbin \
@@ -114,6 +114,9 @@ ln -s sbocheck sbosnap
 cd $PKG/usr/man/man1
 ln -s sbocheck.1 sbosnap.1
 )
+
+mkdir -p $PKG/usr/share/sbotools
+install -m 0644 contrib/* $PKG/usr/share/sbotools
 
 mkdir -p $PKG/etc/sbotools
 cp etc/obsolete $PKG/etc/sbotools/obsolete
