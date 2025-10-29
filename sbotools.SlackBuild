@@ -26,8 +26,8 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=sbotools
-VERSION=${VERSION:-20251028_064b499}
-SRCVER=${SRCVER:-064b49921a34aa66e97babe03253036191db0b71}
+VERSION=${VERSION:-20251030_1c3f61f}
+SRCVER=${SRCVER:-1c3f61f086ff6e462f72324fbbda9842220d34ff}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_pghv}
 PKGTYPE=${PKGTYPE:-tgz}
@@ -119,7 +119,7 @@ mkdir -p $PKG/usr/share/sbotools
 install -m 0644 contrib/* $PKG/usr/share/sbotools
 
 mkdir -p $PKG/etc/sbotools
-cp etc/obsolete $PKG/etc/sbotools/obsolete
+cp etc/{obsolete,perl_vers} $PKG/etc/sbotools
 cp etc/sbotools.conf $PKG/etc/sbotools/sbotools.conf.new
 cp etc/sbotools.hints $PKG/etc/sbotools/sbotools.hints.new
 cp etc/sbotools.colors $PKG/etc/sbotools/sbotools.colors.new
