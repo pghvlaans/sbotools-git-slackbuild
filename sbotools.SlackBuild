@@ -3,7 +3,7 @@
 # Slackware build script for sbotools
 #
 # Written by Jacob Pipkin <j@dawnrazor.net>
-# Copyright 2024-2025 K. Eugene Carlson <kvngncrlsn@gmail.com>
+# Copyright 2024-2026 K. Eugene Carlson <kvngncrlsn@gmail.com>
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -26,8 +26,8 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=sbotools
-VERSION=${VERSION:-20251221_8ffb103}
-SRCVER=${SRCVER:-8ffb10369f4afa0feb0138e242b6f312515b20b4}
+VERSION=${VERSION:-20260101_b67897c}
+SRCVER=${SRCVER:-b67897cba7a96d86719e64c8ae14d549663077b0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_pghv}
 PKGTYPE=${PKGTYPE:-tgz}
