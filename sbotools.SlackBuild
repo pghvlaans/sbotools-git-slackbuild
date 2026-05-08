@@ -26,8 +26,8 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=sbotools
-VERSION=${VERSION:-20260506_b38901d}
-SRCVER=${SRCVER:-b38901d46176a8f7952b0677f930148f891b3311}
+VERSION=${VERSION:-20260508_7746926}
+SRCVER=${SRCVER:-77469268de650b5e63a0a3daa3de39f1dd194037}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_pghv}
 PKGTYPE=${PKGTYPE:-tgz}
@@ -77,8 +77,8 @@ chmod 644 SBO-Lib/README
 	make install DESTDIR=$PKG
 )
 
-SCRIPTS="check clean config find hints install remove upgrade tool"
-ANYONE="check config find hints install upgrade tool"
+SCRIPTS="check clean config cutleaves find hints install remove upgrade tool"
+ANYONE="check config cutleaves find hints install upgrade tool"
 MANS="man1 man3 man5"
 
 mkdir -p $PKG/usr/sbin \
