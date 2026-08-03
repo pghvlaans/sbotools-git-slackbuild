@@ -26,8 +26,8 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=sbotools
-VERSION=${VERSION:-20260802_b3aaeee}
-SRCVER=${SRCVER:-b3aaeee7fe7ebbbaf7ec576e961fe3b3c04b7d1e}
+VERSION=${VERSION:-20260803_db2a8c3}
+SRCVER=${SRCVER:-db2a8c3838aebf886847281b5f95dad9d758842b}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_pghv}
 PKGTYPE=${PKGTYPE:-tgz}
