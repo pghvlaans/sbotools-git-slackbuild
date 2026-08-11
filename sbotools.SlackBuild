@@ -26,8 +26,8 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=sbotools
-VERSION=${VERSION:-20260811_740533d}
-SRCVER=${SRCVER:-740533d91a0f7db7af299457382a9dbaff7baa56}
+VERSION=${VERSION:-20260811_efd2c2b}
+SRCVER=${SRCVER:-efd2c2ba48a42e3eb187861596007e5df0b0e27d}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_pghv}
 PKGTYPE=${PKGTYPE:-tgz}
@@ -117,6 +117,9 @@ ln -s sbocheck.1 sbosnap.1
 
 mkdir -p $PKG/usr/share/sbotools
 install -m 0644 contrib/* $PKG/usr/share/sbotools
+
+mkdir -p $PKG/usr/share/applications
+install -m 0644 application/*.desktop $PKG/usr/share/applications
 
 mkdir -p $PKG/etc/sbotools
 cp etc/{obsolete,perl_vers} $PKG/etc/sbotools
