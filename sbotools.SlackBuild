@@ -26,8 +26,8 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=sbotools
-VERSION=${VERSION:-20260812_6ec8407}
-SRCVER=${SRCVER:-6ec840777bc74ed30c8a05a31bc087de11ea0c66}
+VERSION=${VERSION:-20260812_a1b1a84}
+SRCVER=${SRCVER:-a1b1a8494aa936a9b065fcf2e8b1e592a3310378}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_pghv}
 PKGTYPE=${PKGTYPE:-tgz}
@@ -122,7 +122,11 @@ mkdir -p $PKG/usr/share/applications
 install -m 0644 application/*.desktop $PKG/usr/share/applications
 
 mkdir -p $PKG/usr/share/icons/hicolor/scalable/apps
-install -m 0644 application/*.svg $PKG/usr/share/icons/hicolor/scalable/apps
+install -m 0644 application/icons/scalable/*.svg $PKG/usr/share/icons/hicolor/scalable/apps
+for size in 24 32 64 128 ; do
+  mkdir -p $PKG/usr/share/icons/hicolor/$size\x$size/apps
+  install -m 0644 application/icons/$size/*.png $PKG/usr/share/icons/hicolor/$size\x$size/apps
+done
 
 mkdir -p $PKG/etc/sbotools
 cp etc/{obsolete,perl_vers} $PKG/etc/sbotools
