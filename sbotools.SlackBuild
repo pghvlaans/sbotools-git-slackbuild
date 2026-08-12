@@ -26,17 +26,14 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=sbotools
-VERSION=${VERSION:-20260812_7241cef}
-SRCVER=${SRCVER:-7241cef3b1c6cdecbd1e785af95eb4cef56108ef}
+VERSION=${VERSION:-20260813_148f26d}
+SRCVER=${SRCVER:-148f26dbe6848497f1266404268cb19a6bcfe08d}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_pghv}
 PKGTYPE=${PKGTYPE:-tgz}
 
 ARCH=noarch
 
-# If the variable PRINT_PACKAGE_NAME is set, then this script will report what
-# the name of the created package would be, and then exit. This information
-# could be useful to other scripts.
 if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
   echo "$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE"
   exit 0
@@ -66,15 +63,15 @@ find -L . \
 chmod 644 SBO-Lib/README
 
 ( cd SBO-Lib
-	/usr/bin/perl Makefile.PL \
-	  PREFIX=/usr \
-	  INSTALLDIRS=vendor \
-	  INSTALLVENDORMAN1DIR=/usr/man/man1 \
-	  INSTALLVENDORMAN3DIR=/usr/man/man3 \
-	  INSTALLMAN3DIR=none
-	make
-	make test
-	make install DESTDIR=$PKG
+/usr/bin/perl Makefile.PL \
+  PREFIX=/usr \
+  INSTALLDIRS=vendor \
+  INSTALLVENDORMAN1DIR=/usr/man/man1 \
+  INSTALLVENDORMAN3DIR=/usr/man/man3 \
+  INSTALLMAN3DIR=none
+make
+make test
+make install DESTDIR=$PKG
 )
 
 SCRIPTS="check clean config cutleaves find hints install remove upgrade tool"
@@ -87,7 +84,7 @@ mkdir -p $PKG/usr/sbin \
 for i in $SCRIPTS; do
   install -m 0755 sbo$i $PKG/usr/sbin
   install -m 0644 completions/zsh/_sbo$i $PKG/usr/share/zsh/site-functions
-  install -m 0644 completions/bash/sbo$i $PKG/usr/share/bash-completion/completions/sbo$i
+  install -m 0644 completions/bash/sbo$i $PKG/usr/share/bash-completion/completions
 done
 # sbofind and parts of most other scripts can be used without root
 mkdir -p $PKG/usr/bin
@@ -129,10 +126,10 @@ for size in 24 32 64 128 ; do
 done
 
 mkdir -p $PKG/etc/sbotools
-cp etc/{obsolete,perl_vers} $PKG/etc/sbotools
-cp etc/sbotools.conf $PKG/etc/sbotools/sbotools.conf.new
-cp etc/sbotools.hints $PKG/etc/sbotools/sbotools.hints.new
-cp etc/sbotools.colors $PKG/etc/sbotools/sbotools.colors.new
+install -m 0644 etc/{obsolete,perl_vers} $PKG/etc/sbotools
+install -m 0644 etc/sbotools.conf $PKG/etc/sbotools/sbotools.conf.new
+install -m 0644 etc/sbotools.hints $PKG/etc/sbotools/sbotools.hints.new
+install -m 0644 etc/sbotools.colors $PKG/etc/sbotools/sbotools.colors.new
 
 find $PKG/usr/man -type f -exec gzip -9 {} \;
 for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz; rm $i ; done
